@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Code Complexity Analyzer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="header-content">
+        <h1>🤖 AI Code Analyzer</h1>
+        <p>Select code on any webpage, then analyze</p>
+      </div>
+    </header>
+    
+    <main class="popup-content">
+      <div class="api-key-section" id="apiKeySection">
+        <label for="apiKey">Mistral API Key:</label>
+        <div class="input-group">
+          <input type="password" id="apiKey" placeholder="Enter your Mistral API key">
+          <button type="button" id="saveApiKey">Save</button>
+        </div>
+        <p class="api-key-help">
+          Get your key at <a href="https://console.mistral.ai/" target="_blank">console.mistral.ai</a>
+        </p>
+      </div>
+      
+      <div class="analysis-section" id="analysisSection" style="display: none;">
+        <div class="selection-info">
+          <div class="selected-code-preview" id="codePreview">
+            Select code on the webpage first
+          </div>
+        </div>
+        
+        <div class="language-selector">
+          <label for="language">Programming Language:</label>
+          <select id="language">
+            <option value="auto">Auto-detect</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="cpp">C++</option>
+            <option value="c">C</option>
+            <option value="go">Go</option>
+            <option value="rust">Rust</option>
+            <option value="php">PHP</option>
+            <option value="ruby">Ruby</option>
+            <option value="swift">Swift</option>
+            <option value="kotlin">Kotlin</option>
+            <option value="typescript">TypeScript</option>
+          </select>
+        </div>
+        
+        <div class="analyze-section">
+          <button id="analyzeBtn" class="analyze-btn">
+            <span class="btn-text">🚀 Analyze Complexity</span>
+            <span class="btn-loading" style="display: none;">🤖 Analyzing...</span>
+          </button>
+        </div>
+        
+        <div class="status-section">
+          <div id="statusMessage" class="status-message"></div>
+        </div>
+      </div>
+      
+      <div class="settings-section">
+        <button id="settingsBtn" class="settings-btn">⚙️ Settings</button>
+        <button id="clearDataBtn" class="clear-btn">🗑️ Clear Data</button>
+      </div>
+    </main>
+    
+    <footer class="popup-footer">
+      <p>v2.0.0 - Powered by Mistral AI</p>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "AI Code Complexity Analyzer",
+  "version": "2.0.0",
+  "description": "Analyze code complexity using Mistral AI - select code and click analyze",
+  "author": "AI Code Analyzer",
+  
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  
+  "host_permissions": [
+    "https://api.mistral.ai/*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Analyze Code Complexity with AI"
+  },
+  
+  "icons": {
+    "16": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "128": "icons/icon.svg"
+  },
+  
+  "minimum_chrome_version": "88"
+}
